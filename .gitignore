@@ -1,3 +1,8 @@
+# wave files
+wave/
+*.WAV
+key_config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
