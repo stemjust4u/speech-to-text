@@ -21,7 +21,7 @@ print(t_audio)
 
 frames = obj.readframes(-1) # read all frames
 print(type(frames), type(frames[0]))
-print(len(frames) / (obj.getsampwidth() * obj.getnchannels()))  # sample width was 2 or 2 bytes/sample. But still double what obj.getnframes says?? Because 2 channels?
+print(len(frames) / (obj.getsampwidth() * obj.getnchannels()))  # sample width was 2 or 2 bytes/sample. But still double what obj.getnframes says?? Because 2 channels? So multiplied by num channels.
 obj.close()
 
 obj_new = wave.open("wave/short1b_new.wav", "wb")

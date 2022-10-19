@@ -2,6 +2,8 @@ import sys
 import requests, time
 from key_config import API_KEY_ASSEMBLYAI
 
+
+
 filename = sys.argv[1]
 #filename = "/path/to/foo.wav"
 

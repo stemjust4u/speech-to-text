@@ -1,5 +1,6 @@
 import requests, time
 from key_config import API_KEY_ASSEMBLYAI
+from datetime import datetime
 
 # upload to assemblyai
 headers = {'authorization': API_KEY_ASSEMBLYAI}  # used for authentication
@@ -57,13 +58,13 @@ def get_transcription_result_url(audio_url):
         time.sleep(30)
 
 # Save transcription
-
 def save_transcript(audio_url, filename):
+    print("{0} Audio file uploaded. Waiting for transcription to complete".format(datetime.now().strftime("%d/%m/%Y %H:%M:%S")))
     data, error = get_transcription_result_url(audio_url)
     if data:
         text_filename = filename + ".txt"
         with open(text_filename, "w") as f:
             f.write(data['text'])
-        print('Transcription saved')
+        print("{0} Transcription saved".format(datetime.now().strftime("%d/%m/%Y %H:%M:%S")))
     elif error:
         print("Error on transcript", error)
