@@ -132,3 +132,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+short1_new.wav
+short2.WAV.txt

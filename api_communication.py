@@ -1,10 +1,5 @@
-import sys
 import requests, time
 from key_config import API_KEY_ASSEMBLYAI
-
-filename = sys.argv[1]
-#filename = "/path/to/foo.wav"
-
 
 # upload to assemblyai
 headers = {'authorization': API_KEY_ASSEMBLYAI}  # used for authentication
@@ -63,7 +58,7 @@ def get_transcription_result_url(audio_url):
 
 # Save transcription
 
-def save_transcript(audio_url):
+def save_transcript(audio_url, filename):
     data, error = get_transcription_result_url(audio_url)
     if data:
         text_filename = filename + ".txt"
@@ -72,10 +67,3 @@ def save_transcript(audio_url):
         print('Transcription saved')
     elif error:
         print("Error on transcript", error)
-
-audio_url = upload(filename)
-save_transcript(audio_url)
-
-
-
-
